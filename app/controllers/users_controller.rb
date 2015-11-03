@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+helper_method :check_auth
 
   def index
     @users = User.all
@@ -12,4 +13,10 @@ class UsersController < ApplicationController
     end
   end
 
+def check_auth
+  if !current_user.admin
+    redirect_to :root, :alert => "Access denied."
+  end
+  
+end
 end

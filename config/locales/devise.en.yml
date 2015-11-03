@@ -42,6 +42,8 @@ en:
       updated: "Your account has been updated successfully."
     sessions:
       signed_in: "Signed in successfully."
+      admin:
+          signed_in: "Hello Admin"
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
     unlocks:
