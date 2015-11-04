@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103195835) do
+ActiveRecord::Schema.define(version: 20151104123107) do
 
   create_table "targets", force: :cascade do |t|
-    t.string   "target"
-    t.text     "ip"
-    t.integer  "port"
+    t.text     "ipaddress"
+    t.text     "port"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

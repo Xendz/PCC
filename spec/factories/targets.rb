@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :target do
-    target "MyString"
-ip "MyText"
-port 1
+    ipaddress "MyText"
+port "MyText"
   end
 
 end
