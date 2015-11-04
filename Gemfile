@@ -10,6 +10,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
+#Map Stuff
+gem "geocoder"
+gem 'gmaps4rails'
+gem 'nifty-generators'
+gem 'mocha'
+
 group :development, :test do
   gem 'byebug'
 end
@@ -36,3 +42,5 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+gem 'mocha', group: :test

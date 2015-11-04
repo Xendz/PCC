@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
  
-  #get '/targets/:id', to: 'targets#show'
+#map
+  resources :locations
+
+#target
   resources :targets
 
+#devise
   root to: 'visitors#index'
   devise_for :users
   resources :users

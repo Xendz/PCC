@@ -10,7 +10,7 @@
   <% @targets.each do |target| %>
     <tr>
       <td><%= target.ipaddress %></td>
-      <td><%= target.port %></td>
+      <td><%= truncate(target.port, length: 15) %></td>
       <td><%= link_to 'Show', target_path(target) %></td>
       <td><%= link_to 'Edit', edit_target_path(target) %></td>
       <td><%= link_to 'Destroy', target_path(target),
