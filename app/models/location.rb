@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
-geocoded_by :address
-after_validation :geocode, :if => :address_changed?
+geocoded_by :ip_address,
+  :latitude => :lat, :longitude => :lon
+after_validation :geocode 
 end

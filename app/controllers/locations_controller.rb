@@ -13,5 +13,8 @@ end
 def show
 end
 
+def create
+render plain: params[:target].inspect
+end
 
 end
