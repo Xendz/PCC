@@ -10,6 +10,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
+#exploitdb
+gem 'shodan'
+gem 'rabl'
+gem 'oj'
+gem 'nokogiri'
+
 #Map Stuff
 gem "geocoder"
 gem 'gmaps4rails'

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :target do
-    ipaddress "MyText"
-port "MyText"
+    latitude 1.5
+longitude 1.5
   end
 
 end

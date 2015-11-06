@@ -15,7 +15,6 @@ class TargetsController < ApplicationController
         @target = Target.new
     end
     
-    #render plain: params[:target].inspect
     def create
         @target = Target.new(target_params)
  
