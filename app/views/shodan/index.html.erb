@@ -1,9 +1,12 @@
 
-
-
-
-Longitude: <%= @r %><p></p>
 Latitude: <%=  @r["latitude"] %>
+
+
+
+
+Results <%=  shodan_method(8.8.8.8) %>
+
+Target.all.each{ |ipaddress| ipaddress.update_attributes(latitude: latitude.geocode[0], longitude: longitude.geocode[1]) }
 
 
  

@@ -2,7 +2,7 @@ class TargetsController < ApplicationController
 
     before_action :authorize_admin
     
-    
+
     def index
         @targets = Target.all
     end
