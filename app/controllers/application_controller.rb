@@ -14,14 +14,16 @@ def authorize_admin
   end
 end
   
-def shodan_method 
+def shodan_method
   
-  @target = Target.find(params[:id])
+  @target = Target.all
+ @f = target.ipaddress
   @test = @target.each do |f|
   @APIKEY = "sHXhSewFy26XllFbsxvRuWyzWqRR7BaW"
  
 response = Net::HTTP.get_response(URI.parse("https://api.shodan.io/shodan/host/#{f}?key=#{@APIKEY}"))
  @r= JSON.parse(response.body)
+ @target.update(:latitude, @r)
 end
 end
 end

@@ -17,7 +17,7 @@ class TargetsController < ApplicationController
     
     def create
         @target = Target.new(target_params)
- 
+        flash[:notice] = "Added Target!"
         @target.save
         redirect_to @target
     end
@@ -45,7 +45,7 @@ class TargetsController < ApplicationController
     
     private
     def target_params
-        params.require(:target).permit(:ipaddress, :port)
+        params.require(:target).permit(:ipaddress, :port, :dirb, :backdoors)
     end
     
     
