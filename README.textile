@@ -41,4 +41,4 @@ h2. On Startup!
 
 h2. Preview
 
-<img src = "http://s23.postimg.org/on12tdsjv/devise.png"/>
+[![solarized dualmode](http://s23.postimg.org/on12tdsjv/devise.png](#features)
