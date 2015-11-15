@@ -1,0 +1,49 @@
+<%#= link_to 'Users:', users_path %> <%#= User.count %>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+          var data = new google.visualization.DataTable();
+          
+ data.addColumn('number', 'Lat');                                
+ data.addColumn('number', 'Long');
+ data.addColumn('number', 'Value'); 
+ data.addColumn({type:'string', role:'tooltip'});     
+
+             <%-#   #latitude    #longitude -%>
+             <% @targets.each do |target| %>
+data.addRows([[<%= target.latitude %>,<%= target.longitude %>,0,' <%= target.ipaddress %> \n <%= target.status %>']]);
+         
+<% end %>
+
+
+         var options = {
+ colorAxis:  {minValue: 0, maxValue: 0,  colors: ['#FF0000']},
+ datalessRegionColor: '#282828',
+
+backgroundColor: '#FFFFFF',
+
+
+ legend: 'none',    
+ displayMode: 'markers', 
+ enableRegionInteractivity: 'true', 
+ resolution: 'countries',
+ sizeAxis: {minValue: 1, maxValue:1,minSize:5,  maxSize: 5},
+ tooltip: {textStyle: {color: '#444444'}}    
+ };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+     
+    <div id="regions_div" style='height: 100%; width: 100%; object-fit: contain'></div>
+  </body>
+</html>
