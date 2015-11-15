@@ -17,6 +17,7 @@ class TargetsController < ApplicationController
     
     def create
         @target = Target.new(target_params)
+        @target.user_id = current_user.id if current_user
         flash[:notice] = "Added Target!"
         @target.save
         redirect_to @target

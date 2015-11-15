@@ -15,12 +15,14 @@
  data.addColumn({type:'string', role:'tooltip'});     
 
              <%-#   #latitude    #longitude -%>
-             <% @targets.each do |target| %>
-
-data.addRows([[<%= target.latitude %>,<%= target.longitude %>,0,' <%= target.ipaddress %> \n <%= target.status %>']]);
-         
+             <% if user_signed_in? %>
+   <% @targets.each do |target| %>
+   <% if target.user_id == current_user.id %>
+    
+           data.addRows([[<%= target.latitude %>,<%= target.longitude %>,0,' <%= target.ipaddress %> \n <%= target.status %>']]);
+             <% end %>      
 <% end %>
-
+<% end %>
 
          var options = {
  colorAxis:  {minValue: 0, maxValue: 0,  colors: ['#FF0000']},

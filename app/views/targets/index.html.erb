@@ -29,17 +29,23 @@
         </tr>
     </tfoot>
     <tbody>
+        <% if user_signed_in? %>
+         
         <% @targets.each do |target| %>
+         <% if target.user_id == current_user.id %>
         <tr>
  <td><%= target.ipaddress %></td>
  <td><%=target.status %></td>
- 
+
       <td><%= link_to ' Show', target_path(target) %></td>
       <td><%= link_to ' Edit', edit_target_path(target) %></td>
       <td><%= link_to ' Destroy', target_path(target),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
               <% end %>
+              <% end %>
+             <% end %>
+              
         </tr>
         </tr>
       
