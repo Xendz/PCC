@@ -163,14 +163,14 @@ input:checked + label {
     
   <section id="content2">
     <p>
-<%= @target.port %> </p>
-   
+<%= simple_format(@target.port) %> </p>
+  
 <%= link_to 'Back', targets_path %>
   </section>
     
   <section id="content3">
     <p>
-<%= @target.dirb %> </p>
+<%= simple_format(@target.dirb) %> </p>
 
 <%= link_to 'Back', targets_path %>
 
@@ -178,7 +178,7 @@ input:checked + label {
     
   <section id="content4">
     <p>
-<%= @target.backdoors %>  
+<%=simple_format(@target.backdoors) %>  
 
 </p>
 
