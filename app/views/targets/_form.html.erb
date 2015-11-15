@@ -43,9 +43,9 @@ body {
 }
 
 h1 {
-  padding: 50px 0;
+  padding: 30px 0;
   font-weight: 400;
-  text-align: center;
+  text-align: Center;
 }
 
 p {
@@ -68,7 +68,12 @@ section {
 }
 
 input {
-  /*display: none;*/
+    color: #999;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius:2px;
 }
 
 textarea {
@@ -76,18 +81,23 @@ textarea {
     height: 500px;
 }
 
+geoclass{
+  position: absolute;
+  margin-right: 50px;
+}
+
 label {
   display: inline-block;
   margin: 0 0 -1px;
   padding: 15px 25px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
   color: #bbb;
   border: 1px solid transparent;
 }
 
 label:before {
-  font-family: fontawesome;
+  font-family: Courier;
   font-weight: normal;
   margin-right: 10px;
 }
@@ -134,7 +144,8 @@ input:checked + label {
 
   label:before {
     margin: 0;
-    font-size: 18px;
+    text-align: left;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -170,20 +181,31 @@ input:checked + label {
   <label for="tab4">Notes</label>
     
   <section id="content1">
+
    <p>
-    <%= f.label :ipaddress %><br>
+    IPAddress<p></p>
     <%= f.text_field :ipaddress %>
+  Latitude: <%= f.text_field :latitude,:size => 5, :class => 'geoclass' %>
+  Longitude: <%= f.text_field :longitude,:size => 5, :class => 'geoclass' %>
+    </p>
+     Status<br><p></p>
+ <p>
+      <%= f.select :status, ['Recon', 'Hacked']%>
+      </p>
+    </p>
     <p>
     <%= f.submit :Submit %>
     </p>
   </p>
+  
+
 
 <%= link_to 'Back', targets_path %>
   </section>
     
   <section id="content2">
   <p>
-    <%= f.label :ports %><br>
+    Ports<br><p></p>
     <%= f.text_area :port %>
       <p>
     <%= f.submit :Submit %>
@@ -195,7 +217,7 @@ input:checked + label {
     
   <section id="content3">
     <p>
-    <%= f.label :Directorys %><br>
+   Directorys<br><p></p>
     <%= f.text_area :dirb %>
       <p>
     <%= f.submit :Submit %>
@@ -208,7 +230,7 @@ input:checked + label {
     
   <section id="content4">
     <p>
-    <%= f.label :Backdoors %><br>
+    Notes<p></p>
     <%= f.text_area :backdoors %>
       <p>
     <%= f.submit :Submit %>

@@ -16,7 +16,10 @@
     <thead>
         <tr>
             <th scope="col" class="rounded-company">IP Address</th>
-            
+            <th scope="col" class="rounded-company">Status</th>
+            <th scope="col" class="rounded-company"></th>
+            <th scope="col" class="rounded-company"></th>
+            <th scope="col" class="rounded-company"></th>
         </tr>
     </thead>
         <tfoot>
@@ -29,6 +32,7 @@
         <% @targets.each do |target| %>
         <tr>
  <td><%= target.ipaddress %></td>
+ <td><%=target.status %></td>
       <td><%= link_to ' Show', target_path(target) %></td>
       <td><%= link_to ' Edit', edit_target_path(target) %></td>
       <td><%= link_to ' Destroy', target_path(target),

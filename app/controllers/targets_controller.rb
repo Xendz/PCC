@@ -45,7 +45,7 @@ class TargetsController < ApplicationController
     
     private
     def target_params
-        params.require(:target).permit(:ipaddress, :port, :dirb, :backdoors)
+        params.require(:target).permit(:ipaddress, :port, :dirb, :backdoors, :status, :latitude, :longitude)
     end
     
     
