@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
  
+  get 'knowledge/index'
+
+  
+
   #get 'https://api.shodan.io/shodan/host/8.8.8.8?key=sHXhSewFy26XllFbsxvRuWyzWqRR7BaW' to: 'shodan#index'
 resources :visitors
 resources :shodan
