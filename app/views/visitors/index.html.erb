@@ -15,9 +15,11 @@
  data.addColumn({type:'string', role:'tooltip'});     
 
              <%-#   #latitude    #longitude -%>
-data.addRows([[31.5238125,-92.5874244,0,' |attack|\nHacked']]);
-data.addRows([[ 39.059575,-98.789062,0,'<%= @test %>\nHacked']]);
+             <% @targets.each do |target| %>
 
+data.addRows([[<%= target.latitude %>,<%= target.longitude %>,0,' <%= target.ipaddress %> \n <%= target.status %>']]);
+         
+<% end %>
 
 
          var options = {

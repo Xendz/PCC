@@ -13,8 +13,7 @@ def authorize_admin
     #redirects to previous page
   end
 end
-  
-  
+
   
 
   

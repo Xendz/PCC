@@ -1,6 +1,6 @@
 class VisitorsController < ApplicationController
     
     def index
-    #@test = Target.find(1).ipaddress
+   @targets = Target.all
     end
 end
