@@ -1,16 +1,9 @@
-
-
-
 <!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
     <title>Add Targets</title>
-    
-    
-    
-    
-        <style>
+  <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 @import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
@@ -76,19 +69,22 @@ label:before {
 }
 
 label[for*='1']:before {
-  content: '\f1cb';
+  content: '\f05b';
 }
 
 label[for*='2']:before {
-  content: '\f17d';
+  content: '\f06e';
 }
 
 label[for*='3']:before {
-  content: '\f16b';
+  content: '\f07c';
 }
 
 label[for*='4']:before {
-  content: '\f1a9';
+  content: '\f1d8';
+}
+label[for*='5']:before {
+  content: '\f0e8';
 }
 
 label:hover {
@@ -106,7 +102,9 @@ input:checked + label {
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5
+{
   display: block;
 }
 
@@ -127,16 +125,10 @@ input:checked + label {
 }
 
     </style>
-
-    
-        <script src="javascript/prefixfree.min.js"></script>
-
-    
+   
   </head>
 
   <body>
-
-    <h1>Target Panel</h1>
 
 <main>
   
@@ -151,6 +143,9 @@ input:checked + label {
     
   <input id="tab4" type="radio" name="tabs">
   <label for="tab4">Notes</label>
+  
+   <input id="tab5" type="radio" name="tabs">
+  <label for="tab5">Network</label>
     
   <section id="content1">
     <p>
@@ -186,6 +181,12 @@ Latitude: <%= @target.latitude %><p></p> Longitude: <%= @target.longitude %><p><
 <%=simple_format(@target.backdoors) %>  
 
 </p>
+  <section id="content5">
+    <p>
+Network Information: 
+
+</p>
+
 
 <%= link_to 'Back', targets_path %>
 

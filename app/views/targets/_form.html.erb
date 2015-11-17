@@ -1,30 +1,19 @@
-<%= form_for @target do |f| %>
- 
-  <% if @target.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@target.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @target.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 
-<!DOCTYPE html>
+
+
+
+
+    
+            <!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
-
-    
-    
-    
-    
-        <style>
+    <title>Add Targets</title>
+  <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
 *, *:before, *:after {
   margin: 0;
@@ -43,22 +32,22 @@ body {
 }
 
 h1 {
-  padding: 30px 0;
+  padding: 50px 0;
   font-weight: 400;
-  text-align: Center;
+  text-align: center;
 }
 
 p {
- /* margin: 0 0 20px;
-  line-height: 1.5;*/
+  margin: 0 0 20px;
+  line-height: 1.5;
 }
 
 main {
-  min-width: 500px;
+  min-width: 320px;
   max-width: 800px;
   padding: 50px;
   margin: 0 auto;
-  background: #ffffff;
+  background: #fff;
 }
 
 section {
@@ -68,22 +57,13 @@ section {
 }
 
 input {
-    color: #999;
-    font-weight: bold;
-    font-size: 11px;
-    padding: 8px;
-    border: 1px solid #999;
-    border-radius:2px;
+  display: none;
 }
 
-textarea {
-    width: 500px;
-    height: 500px;
-}
-
-geoclass{
-  position: absolute;
-  margin-right: 50px;
+input.test{
+  
+  display: block;
+  
 }
 
 label {
@@ -91,31 +71,34 @@ label {
   margin: 0 0 -1px;
   padding: 15px 25px;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   color: #bbb;
   border: 1px solid transparent;
 }
 
 label:before {
-  font-family: Courier;
+  font-family: fontawesome;
   font-weight: normal;
   margin-right: 10px;
 }
 
 label[for*='1']:before {
-  content: '\f1cb';
+  content: '\f05b';
 }
 
 label[for*='2']:before {
-  content: '\f17d';
+  content: '\f06e';
 }
 
 label[for*='3']:before {
-  content: '\f16b';
+  content: '\f07c';
 }
 
 label[for*='4']:before {
-  content: '\f1a9';
+  content: '\f1d8';
+}
+label[for*='5']:before {
+  content: '\f0e8';
 }
 
 label:hover {
@@ -133,7 +116,9 @@ input:checked + label {
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5
+{
   display: block;
 }
 
@@ -144,8 +129,7 @@ input:checked + label {
 
   label:before {
     margin: 0;
-    text-align: left;
-    font-size: 12px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -155,17 +139,10 @@ input:checked + label {
 }
 
     </style>
-
-    
-        
-
     
   </head>
 
   <body>
-
-    <h1>Target Panel</h1>
-
 <main>
   
   <input id="tab1" type="radio" name="tabs" checked>
@@ -179,23 +156,42 @@ input:checked + label {
     
   <input id="tab4" type="radio" name="tabs">
   <label for="tab4">Notes</label>
+  
+  <input id="tab5" type="radio" name="tabs">
+  <label for="tab5">Network</label>
     
   <section id="content1">
+    
+    <%= form_for @target do |f| %>
+ 
+  <% if @target.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@target.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @target.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
 
    <p>
     IPAddress<p></p>
-    <%= f.text_field :ipaddress %><p></p>
-   Website:<p></p> <%= f.text_field :domain %>
+    <%= f.text_field :ipaddress, :class => "test"  %><p></p>
+   Website:<p></p> <%= f.text_field :domain, :class => "test" %>
     </p>
      Status<br><p></p>
  <p>
-      <%= f.select :status, ['Recon', 'Hacked']%>
-       Latitude: <%= f.text_field :latitude,:size => 5, :class => 'geoclass' %>
-  Longitude: <%= f.text_field :longitude,:size => 5, :class => 'geoclass' %>
+      <%= f.select :status, ['Recon', 'Hacked']%><p></p>
+       Latitude: <%= f.text_field :latitude, :size => 7, :class => 'test' %>  Longitude: <%= f.text_field :longitude, :size => 7, :class => 'test' %>
       </p>
     </p>
     <p>
-    <%= f.submit :Submit %>
+    <%= f.submit :Submit, :class => "test"  %>
     </p>
   </p>
   
@@ -207,9 +203,9 @@ input:checked + label {
   <section id="content2">
   <p>
     Ports<br><p></p>
-    <%= f.text_area :port %>
+    <%= f.text_area :port, :class => "test"  %>
       <p>
-    <%= f.submit :Submit %>
+    <%= f.submit :Submit, :class => "test" %>
     </p>
   </p>
    
@@ -219,9 +215,9 @@ input:checked + label {
   <section id="content3">
     <p>
    Directorys<br><p></p>
-    <%= f.text_area :dirb %>
+    <%= f.text_area :dirb, :class => "test"  %>
       <p>
-    <%= f.submit :Submit %>
+    <%= f.submit :Submit, :class => "test"  %>
     </p>
   </p>
 
@@ -232,9 +228,24 @@ input:checked + label {
   <section id="content4">
     <p>
     Notes<p></p>
-    <%= f.text_area :backdoors %>
+    <%= f.text_area :backdoors, :class => "test"  %>
       <p>
-    <%= f.submit :Submit %>
+    <%= f.submit :Submit, :class => "test"  %>
+    </p>
+  </p>
+
+
+<%= link_to 'Back', targets_path %>
+
+
+  </section>
+  
+    <section id="content5">
+    <p>
+    Network<p></p>
+    <%= f.text_area :backdoors, :class => "test"  %>
+      <p>
+    <%= f.submit :Submit, :class => "test"  %>
     </p>
   </p>
 
@@ -251,5 +262,7 @@ input:checked + label {
     
     
   </body>
+</html>
+
  
 <% end %>
