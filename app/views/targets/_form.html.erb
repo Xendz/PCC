@@ -184,13 +184,14 @@ input:checked + label {
 
    <p>
     IPAddress<p></p>
-    <%= f.text_field :ipaddress %>
-  Latitude: <%= f.text_field :latitude,:size => 5, :class => 'geoclass' %>
-  Longitude: <%= f.text_field :longitude,:size => 5, :class => 'geoclass' %>
+    <%= f.text_field :ipaddress %><p></p>
+   Website:<p></p> <%= f.text_field :domain %>
     </p>
      Status<br><p></p>
  <p>
       <%= f.select :status, ['Recon', 'Hacked']%>
+       Latitude: <%= f.text_field :latitude,:size => 5, :class => 'geoclass' %>
+  Longitude: <%= f.text_field :longitude,:size => 5, :class => 'geoclass' %>
       </p>
     </p>
     <p>

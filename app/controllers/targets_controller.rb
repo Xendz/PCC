@@ -3,6 +3,7 @@ class TargetsController < ApplicationController
     before_action :authorize_admin
     
 
+
     def index
         @targets = Target.all
     end
@@ -46,7 +47,7 @@ class TargetsController < ApplicationController
     
     private
     def target_params
-        params.require(:target).permit(:ipaddress, :port, :dirb, :backdoors, :status, :latitude, :longitude)
+        params.require(:target).permit(:ipaddress, :domain, :port, :dirb, :backdoors, :status, :latitude, :longitude)
     end
     
     

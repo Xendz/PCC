@@ -1,7 +1,7 @@
 class CreateTargets < ActiveRecord::Migration
   def change
     create_table :targets do |t|
-      t.text :ipaddress
+      t.string :ipaddress
       t.text :port
 
       t.timestamps null: false

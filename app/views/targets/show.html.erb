@@ -154,8 +154,13 @@ input:checked + label {
     
   <section id="content1">
     <p>
+ <b>IP Address:</b><p></p>
+<%= @target.ipaddress %></p>
+ <b>Domain:</b><p></p>
+<%= @target.domain %> <p></p>
+Latitude: <%= @target.latitude %><p></p> Longitude: <%= @target.longitude %><p></p>
 
-<%= @target.ipaddress %></p> Latitude: <%= @target.latitude %> Longitude: <%= @target.longitude %><p></p>
+ <b>Status:</b><p></p>
 <%= @target.status %> <p></p>
 
 <%= link_to 'Back', targets_path %>

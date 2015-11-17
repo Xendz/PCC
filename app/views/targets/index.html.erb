@@ -15,6 +15,7 @@
 <table id="rounded-corner" summary="Target Listing">
     <thead>
         <tr>
+            <th scope="col" class="rounded-company">Domain</th>
             <th scope="col" class="rounded-company">IP Address</th>
             <th scope="col" class="rounded-company">Status</th>
             <th scope="col" class="rounded-company"></th>
@@ -25,6 +26,7 @@
         <tfoot>
         <tr>
             <td colspan="4" class="rounded-foot-left"><em> <%= link_to 'New Target', new_target_path %></em></td>
+           
             <td class="rounded-foot-right">&nbsp;</td>
         </tr>
     </tfoot>
@@ -34,6 +36,7 @@
         <% @targets.each do |target| %>
          <% if target.user_id == current_user.id %>
         <tr>
+<td><%= target.domain %></td>
  <td><%= target.ipaddress %></td>
  <td><%=target.status %></td>
 

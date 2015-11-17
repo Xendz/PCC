@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-geocoded_by :ip_address,
-  :latitude => :lat, :longitude => :lon
+geocoded_by :ipaddress,
+  :latitude => :latitude, :longitude => :longitude
 after_validation :geocode 
 end

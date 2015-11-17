@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115211106) do
+ActiveRecord::Schema.define(version: 20151117014015) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "address"
@@ -33,25 +33,26 @@ ActiveRecord::Schema.define(version: 20151115211106) do
   add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "targets", force: :cascade do |t|
-    t.text     "ipaddress"
+    t.string   "ipaddress"
     t.text     "port"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "dirb"
-    t.string   "backdoors"
     t.string   "status"
     t.integer  "user_id"
+    t.string   "dirb"
+    t.string   "backdoors"
+    t.string   "domain"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "",   null: false
+    t.string   "encrypted_password",     default: "",   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -59,7 +60,7 @@ ActiveRecord::Schema.define(version: 20151115211106) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.boolean  "admin",                  default: false, null: false
+    t.boolean  "admin",                  default: true, null: false
     t.string   "role"
   end
 
