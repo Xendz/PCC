@@ -32,7 +32,7 @@
         </tr>
     </tfoot>
     <tbody>
- <% Dir["public/files/*.pdf"].each do |file| %>
+ <% Dir["public/files/*"].each do |file| %>
         <tr>
  <td><%= link_to nil, file[/\/.*/] %></td>
 

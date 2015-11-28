@@ -1,9 +1,4 @@
 
-
-
-
-
-
     
             <!DOCTYPE html>
 <html >
@@ -100,6 +95,22 @@ label[for*='4']:before {
 label[for*='5']:before {
   content: '\f0e8';
 }
+label[for*='6']:before {
+  content: '\f188';
+}
+
+label[for*='7']:before {
+  content: '\f090';
+}
+
+label[for*='8']:before {
+  content: '\f09d';
+}
+label[for*='9']:before {
+  content: '\f124';
+}
+
+
 
 label:hover {
   color: #888;
@@ -117,7 +128,12 @@ input:checked + label {
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3,
 #tab4:checked ~ #content4,
-#tab5:checked ~ #content5
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8,
+#tab9:checked ~ #content9
 {
   display: block;
 }
@@ -157,8 +173,20 @@ input:checked + label {
   <input id="tab4" type="radio" name="tabs">
   <label for="tab4">Notes</label>
   
-  <input id="tab5" type="radio" name="tabs">
+   <input id="tab5" type="radio" name="tabs">
   <label for="tab5">Network</label>
+  
+     <input id="tab6" type="radio" name="tabs">
+  <label for="tab6">Vulns</label>
+  
+     <input id="tab7" type="radio" name="tabs">
+  <label for="tab7">Backdoors</label>
+    
+     <input id="tab8" type="radio" name="tabs">
+  <label for="tab8">Credientials</label>
+       <input id="tab9" type="radio" name="tabs">
+  <label for="tab9">Location</label>
+  
     
   <section id="content1">
     
@@ -181,14 +209,13 @@ input:checked + label {
 
    <p>
     IPAddress<p></p>
-    <%= f.text_field :ipaddress, :class => "test"  %><p></p>
+    <%= f.text_field :ipaddress, :class => "test"  %> <p></p>Operating System: <p></p><%= f.select :opsys, ['Linux', 'Ubuntu', 'Debain', 'Fedora', 'FreeBSD', 'Windows7/8/10', 'Windows NT/XP']%><p></p>
    Website:<p></p> <%= f.text_field :domain, :class => "test" %>
     </p>
      Status<br><p></p>
  <p>
       <%= f.select :status, ['Recon', 'Hacked']%><p></p>
-       Latitude: <%= f.text_field :latitude, :size => 7, :class => 'test' %>  Longitude: <%= f.text_field :longitude, :size => 7, :class => 'test' %>
-      </p>
+    
     </p>
     <p>
     <%= f.submit :Submit, :class => "test"  %>
@@ -242,8 +269,17 @@ input:checked + label {
   
     <section id="content5">
     <p>
-    Network<p></p>
-    <%= f.text_area :backdoors, :class => "test"  %>
+    Network<p></p><p>
+
+         <%= f.text_field :net1, :class => "test"  %>
+      <p>
+         <%= f.text_field :net2, :class => "test"  %>
+      <p>
+         <%= f.text_field :net3, :class => "test"  %>
+      <p>
+         <%= f.text_field :net4, :class => "test"  %>
+      <p>
+         <%= f.text_field :net5, :class => "test"  %>
       <p>
     <%= f.submit :Submit, :class => "test"  %>
     </p>
@@ -253,8 +289,29 @@ input:checked + label {
 <%= link_to 'Back', targets_path %>
 
 
+
+
   </section>
-    
+  
+      <section id="content9">
+    <p>
+    Location<p></p><p>
+
+             Latitude: <%= f.text_field :latitude, :size => 7, :class => 'test' %>  Longitude: <%= f.text_field :longitude, :size => 7, :class => 'test' %>
+      </p>
+      <p>
+    <%= f.submit :Submit, :class => "test"  %>
+    </p>
+  </p>
+
+
+<%= link_to 'Back', targets_path %>
+
+
+
+
+  </section>
+  
 </main>
     
     

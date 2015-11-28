@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html >
   <head>
@@ -86,6 +89,18 @@ label[for*='4']:before {
 label[for*='5']:before {
   content: '\f0e8';
 }
+label[for*='6']:before {
+  content: '\f188';
+}
+
+label[for*='7']:before {
+  content: '\f090';
+}
+
+label[for*='8']:before {
+  content: '\f09d';
+}
+
 
 label:hover {
   color: #888;
@@ -103,7 +118,12 @@ input:checked + label {
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3,
 #tab4:checked ~ #content4,
-#tab5:checked ~ #content5
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8
+
 {
   display: block;
 }
@@ -146,6 +166,17 @@ input:checked + label {
   
    <input id="tab5" type="radio" name="tabs">
   <label for="tab5">Network</label>
+  
+     <input id="tab6" type="radio" name="tabs">
+  <label for="tab6">Vulns</label>
+  
+     <input id="tab7" type="radio" name="tabs">
+  <label for="tab7">Backdoors</label>
+    
+     <input id="tab8" type="radio" name="tabs">
+  <label for="tab8">Credientials</label>
+  
+
     
   <section id="content1">
     <p>
@@ -153,6 +184,10 @@ input:checked + label {
 <%= @target.ipaddress %></p>
  <b>Domain:</b><p></p>
 <%= @target.domain %> <p></p>
+<p></p>
+<b>Operating System:</b>
+<p></p>
+<%= @target.opsys %><p></p>
 Latitude: <%= @target.latitude %><p></p> Longitude: <%= @target.longitude %><p></p>
 
  <b>Status:</b><p></p>
