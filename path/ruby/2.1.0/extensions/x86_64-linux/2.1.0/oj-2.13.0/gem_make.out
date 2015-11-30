@@ -1,0 +1,31 @@
+/usr/bin/ruby2.1 extconf.rb 
+>>>>> Creating Makefile for ruby version 2.1.5 on x86_64-linux-gnu <<<<<
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling strict.c
+compiling val_stack.c
+compiling resolve.c
+compiling object.c
+compiling fast.c
+compiling hash.c
+compiling oj.c
+compiling saj.c
+compiling hash_test.c
+compiling err.c
+compiling sparse.c
+compiling parse.c
+compiling compat.c
+compiling cache8.c
+compiling dump.c
+compiling scp.c
+compiling circarray.c
+compiling reader.c
+compiling odd.c
+linking shared-object oj/oj.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 oj.so ./.gem.20151129-17212-1l9asil/oj
+installing default oj libraries

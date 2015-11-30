@@ -1,0 +1,17 @@
+/usr/bin/ruby2.1 extconf.rb 
+extconf.rb:4:in `<main>': Use RbConfig instead of obsolete and deprecated Config.
+extconf.rb:4:in `<main>': Use RbConfig instead of obsolete and deprecated Config.
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling na_str.c
+na_str.c:2:21: fatal error: version.h: No such file or directory
+ #include <version.h>
+                     ^
+compilation terminated.
+Makefile:231: recipe for target 'na_str.o' failed
+make: *** [na_str.o] Error 1
+
+make failed, exit code 2

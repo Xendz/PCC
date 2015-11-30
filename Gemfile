@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
+
 gem 'rails', '4.2.4'
 gem 'railties'
 gem 'sqlite3'
@@ -11,6 +11,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem "cancancan"
 gem "rolify"
+gem "carrierwave"
+gem "bootstrap-sass"
+gem "rprogram", '~> 0.3'
+gem "nmap-parser"
+gem "crack"
+gem "json"
+
 
 #exploitdb
 gem 'shodan'
@@ -23,6 +30,7 @@ gem "geocoder"
 gem 'gmaps4rails'
 gem 'nifty-generators'
 gem 'mocha'
+gem 'split', '~> 1.2', '>= 1.2.1'
 
 group :development, :test do
   gem 'byebug'
@@ -52,3 +60,7 @@ group :test do
 end
 
 gem 'mocha', group: :test
+
+require 'crack' # for xml and json
+require 'crack/json' # for just json
+require 'crack/xml' # for just xml

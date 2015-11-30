@@ -1,0 +1,21 @@
+name: rprogram
+summary: A library for creating wrappers around command-line programs.
+description:
+  RProgram is a library for creating wrappers around command-line programs.
+  RProgram provides a Rubyful interface to programs and all their options
+  or non-options. RProgram can also search for programs installed on a
+  system. files without having to use YAML or define classes named like
+  the file.
+
+license: MIT
+authors: Postmodern
+email: postmodern.mod3@gmail.com
+homepage: https://github.com/postmodern/rprogram#readme
+has_yard: true
+
+required_ruby_version: ">= 1.8.7"
+
+development_dependencies:
+  rubygems-tasks: ~> 0.1
+  rspec: ~> 2.4
+  yard: ~> 0.7
