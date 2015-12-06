@@ -17,6 +17,8 @@ gem "rprogram", '~> 0.3'
 gem "nmap-parser"
 gem "crack"
 gem "json"
+gem 'rubyzip', '>= 1.0.0' # will load new rubyzip version
+gem 'zip-zip' # will load compatibility for old rubyzip API.
 
 
 #exploitdb
@@ -61,6 +63,4 @@ end
 
 gem 'mocha', group: :test
 
-require 'crack' # for xml and json
-require 'crack/json' # for just json
-require 'crack/xml' # for just xml
+

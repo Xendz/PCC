@@ -31,11 +31,20 @@
     </tfoot>
     <tbody>
 
-
-	 <%= display =>
-
+<tr>
 
 
+<% @protocol.zip(@ports,@status,@service).each do |proto, port, status, service| %>
+<tr>
+<td><%= status %></td>
+<td><%= proto %></td>
+<td><%= port %></td>
+<td><%= service %></td>
+</tr>
+
+<% end %>
+</td>
+</tr>
    
     </tbody>
 </table>

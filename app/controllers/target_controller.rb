@@ -23,6 +23,7 @@ def show
 end
   def index
    authorize_admin
+   
   end
 end
 

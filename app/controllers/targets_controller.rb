@@ -1,11 +1,12 @@
 class TargetsController < ApplicationController
 
     before_action :authorize_admin
-    
+    before_action :nmap_parse
 
 
     def index
         @targets = Target.all
+
     end
 
     def show
@@ -49,6 +50,17 @@ class TargetsController < ApplicationController
     def target_params
         params.require(:target).permit(:ipaddress, :domain, :opsys, :net1, :net2, :net3, :net4, :net5, :port, :dirb, :backdoors, :status, :latitude, :longitude)
     end
+
+    def nmap_parse
+@xml = Nokogiri::XML(File.open("public/uploads/resume/attachment/scanbc.xml"))
+
+@hostaddr = @xml.xpath("//host/address/@addr")
+@protocol = @xml.xpath("//ports/port/@protocol")
+@ports = @xml.xpath("//ports/port/@portid")
+@status = @xml.xpath("//ports/port/state/@state")
+@service = @xml.xpath("//ports/port/service/@name")
+
+end
     
     
 end

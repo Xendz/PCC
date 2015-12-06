@@ -199,7 +199,44 @@ Latitude: <%= @target.latitude %><p></p> Longitude: <%= @target.longitude %><p><
   <section id="content2">
     <p>
 <%= simple_format(@target.port) %> </p>
-  
+
+<center>
+<table id="rounded-corner" summary="Target Listing">
+    <thead>
+        <tr>
+            <th scope="col" class="rounded-company">Status</th>
+            <th scope="col" class="rounded-company">Protocol</th>
+            <th scope="col" class="rounded-company">Port</th>
+            <th scope="col" class="rounded-company">Service</th>
+
+        </tr>
+    </thead>
+        <tfoot>
+        <tr>
+
+        </tr>
+    </tfoot>
+    <tbody>
+
+<tr>
+
+
+<% @protocol.zip(@ports,@status,@service).each do |proto, port, status, service| %>
+<tr>
+<td><%= status %></td>
+<td><%= proto %></td>
+<td><%= port %></td>
+<td><%= service %></td>
+</tr>
+
+<% end %>
+</td>
+</tr>
+   
+    </tbody>
+</table>
+
+</center>
 <%= link_to 'Back', targets_path %>
   </section>
     
